@@ -101,5 +101,50 @@ module.exports = function(deployer) {
 ```truffle migrate```
 
 # Testing the smart contract
+## Testing the smart contract using JavaScript¶
+
+Create a new file named `testAdoption.test.js` in the `test/` directory.
+
+
+```js
+const Adoption = artifacts.require("Adoption");
+
+contract("Adoption", (accounts) => {
+  let adoption;
+  let expectedAdopter;
+
+  before(async () => {
+      adoption = await Adoption.deployed();
+  });
+
+  describe("adopting a pet and retrieving account addresses", async () => {
+    before("adopt a pet using accounts[0]", async () => {
+      await adoption.adopt(8, { from: accounts[0] });
+      expectedAdopter = accounts[0];
+    });
+  });
+});
+
+```
+
+`truffle test`
+
+```
+Using network 'development'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+  Contract: Adoption
+    adopting a pet and retrieving account addresses
+      ✓ can fetch the address of an owner by pet id (62ms)
+
+
+  1 passing (396ms)
+```
+
 # Creating a user interface to interact with the smart contract
 # Interacting with the dapp in a browser
