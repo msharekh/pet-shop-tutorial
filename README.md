@@ -237,5 +237,13 @@ web3.eth.getAccounts(function(error, accounts) {
 });
 
 ```
+## Installing and configuring MetaMask
+
+
 
 # Interacting with the dapp in a browser
+
+
+## Installing and configuring lite-server
+
+
