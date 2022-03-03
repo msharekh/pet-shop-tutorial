@@ -41,9 +41,47 @@ The default Truffle directory structure contains the following:
 # Writing the smart contract
 
 - Create a new file named `Adoption.sol` in the contracts/ directory.
+## Variable setup
 
+```address[16] public adopters;```
+
+## Your first function: Adopting a pet
+```js
+// Adopting a pet
+function adopt(uint petId) public returns (uint) {
+  require(petId >= 0 && petId <= 15);
+
+  adopters[petId] = msg.sender;
+
+  return petId;
+}
+```
+
+## Your second function: Retrieving the adopters¶
+
+```js
+// Retrieving the adopters
+function getAdopters() public view returns (address[16] memory) {
+  return adopters;
+}
+```
 
 # Compiling and migrating the smart contract
+
+## Compilation
+
+```truffle compile```
+
+```
+msh@Meshals-MacBook-Pro pet-shop-tutorial % truffle compile
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Adoption.sol
+> Compiling ./contracts/Migrations.sol
+> Artifacts written to /Users/msh/development/pet-shop-tutorial/build/contracts
+```
+
 # Testing the smart contract
 # Creating a user interface to interact with the smart contract
 # Interacting with the dapp in a browser
