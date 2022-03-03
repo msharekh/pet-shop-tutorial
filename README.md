@@ -82,6 +82,24 @@ Compiling your contracts...
 > Artifacts written to /Users/msh/development/pet-shop-tutorial/build/contracts
 ```
 
+## Migration
+
+Now we are ready to create our own migration script.
+
+- Create a new file named `2_deploy_contracts.js` in the migrations/ directory.
+
+- Add the following content to the 2_deploy_contracts.js file:
+
+
+```js
+var Adoption = artifacts.require("Adoption");
+
+module.exports = function(deployer) {
+  deployer.deploy(Adoption);
+};
+```
+```truffle migrate```
+
 # Testing the smart contract
 # Creating a user interface to interact with the smart contract
 # Interacting with the dapp in a browser
