@@ -1,4 +1,6 @@
-# Truffle Introdtion 
+# Truffle Introduction 
+
+https://trufflesuite.com/
 
 1. Setting up the development environment
 1. Creating a Truffle project using a Truffle Box
@@ -7,6 +9,13 @@
 1. Testing the smart contract
 1. Creating a user interface to interact with the smart contract
 1. Interacting with the dapp in a browser
+
+
+# FACTS
+- Immutable ثابت
+- decentralized
+- when contract deployed constructor run
+- contract is like wallet address and people can send it money
 
 
 # Setting up the development environment
@@ -20,6 +29,35 @@ Solidity v0.5.16 (solc-js)
 Node v16.14.0
 Web3.js v1.5.3
 ```
+
+## Common NPM script
+
+[javascripttutorial](https://www.javascripttutorial.net/nodejs-tutorial/npm-list/
+)
+  ### Listing packages in devDependencies
+    `npm list --dev`
+  ### Formatting installed packages in JSON format
+    `npm list --depth=0 --json`
+    msh@Meshals-MacBook-Pro pet-shop-tutorial % npm list --depth=0 --json
+```json
+{
+  "version": "1.0.0",
+  "name": "pet-shop",
+  "dependencies": {
+    "lite-server": {
+      "version": "2.4.0",
+      "resolved": "https://registry.npmjs.org/lite-server/-/lite-server-2.4.0.tgz"
+    }
+  }
+}```
+  ### Listing packages in devDependencies
+    `npm list --dev`  
+### Listing packages in devDependencies
+      `npm list --dev`  
+
+  ### Listing packages in devDependencies
+      `npm list --dev`  
+
 
 # Creating a Truffle project using a Truffle Box
 
@@ -241,11 +279,58 @@ web3.eth.getAccounts(function(error, accounts) {
 ```
 ## Installing and configuring MetaMask
 
+- first connect to GANACHE
+  - HTTP://127.0.0.1:8545
+  - 1337
+  - ETH
+
+- import account from GANACHE
+  - 7155e315f57676c6d33bc6a8595d30f1c01671f229ae5613c3fb597a61f1ca43
+  - 0x1d66880b4A21B6932D7b30a5d2D5A130A975c02E
+  - GANACHE01
 
 
 # Interacting with the dapp in a browser
 
 
+
+
 ## Installing and configuring lite-server
 
+Start the local web server:
+
+> npm run dev
+
+- Adopt pet
+  - Breed: Boxer
+  - Age: 3
+  - Location: Matheny, Utah
+  - by first-adoptor
+    - Estimated gas fee
+    - 0.00127442
+    - 0.001274ETH
+    - Max fee:
+    - 0.00127442ETH
+    - Total
+    - 0.00127442
+    - 0.00127442ETH
+    - Amount + gas fee
+  - Max amount: 0.00127442ETH
+
+
+Breed: French Bulldog
+Age: 2
+Location: Gerber, South Dakota
+
+- EDIT
+- Estimated gas fee
+- 0.00127442
+- 0.001274ETH
+- Max fee:
+- 0.00127442ETH
+- Total
+- 0.00127442
+- 0.00127442ETH
+- Amount + gas fee
+- Max amount: 0.00127442ETH
 

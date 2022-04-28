@@ -1,6 +1,7 @@
 pragma solidity >=0.4.20;
 
 contract Adoption {
+    
     address[16] public adopters;
 
     // Adopting a pet
