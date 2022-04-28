@@ -55,7 +55,7 @@ App = {
 
     var accounts = web3.eth.accounts;
     var selectedAddress = web3.currentProvider.selectedAddress;
-    $('#accountval').text(selectedAddress);
+    $('#accountval').text(`address: ${selectedAddress.substr(0,7)}`);
 
     
 
@@ -97,7 +97,7 @@ App = {
     var adoptionInstance;
 
     App.contracts.Adoption.deployed().then(function (instance) {
-      $('#contractval').text(instance.address);
+      $('#contractval').text(`contract: ${instance.address.substr(0,7)}`);
       adoptionInstance = instance;
 
       return adoptionInstance.getAdopters.call();
@@ -105,7 +105,11 @@ App = {
       console.log(adopters);
       for (i = 0; i < adopters.length; i++) {
         if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
+          
+          $('.panel-pet').eq(i).find('.pet-owner').text(adopters[i].substr(0,7));
+
           $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
+
         }
       }
     }).catch(function (err) {
