@@ -31,7 +31,7 @@ Web3.js v1.5.3
 ```
 
 ## Common NPM script
-
+collapse js: ctrl+k+N
 [javascripttutorial](https://www.javascripttutorial.net/nodejs-tutorial/npm-list/
 )
   ### Listing packages in devDependencies
