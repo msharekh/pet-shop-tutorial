@@ -23,6 +23,11 @@ App = {
     return await App.initWeb3();
   },
 
+  setAccountLabel: async function () {
+    // set account label
+    $('#accval').text('gooood');
+  },
+
   initWeb3: async function () {
     /*
      * Replace me...
@@ -47,6 +52,12 @@ App = {
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     }
     web3 = new Web3(App.web3Provider);
+
+    var accounts = web3.eth.accounts;
+    var selectedAddress = web3.currentProvider.selectedAddress;
+    $('#accountval').text(selectedAddress);
+
+    
 
 
     return App.initContract();
@@ -74,6 +85,7 @@ App = {
   },
 
   bindEvents: function () {
+
     $(document).on('click', '.btn-adopt', App.handleAdopt);
   },
 
@@ -81,13 +93,16 @@ App = {
     /*
      * Replace me...
      */
+    
     var adoptionInstance;
 
     App.contracts.Adoption.deployed().then(function (instance) {
+      $('#contractval').text(instance.address);
       adoptionInstance = instance;
 
       return adoptionInstance.getAdopters.call();
     }).then(function (adopters) {
+      console.log(adopters);
       for (i = 0; i < adopters.length; i++) {
         if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
           $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
@@ -116,6 +131,9 @@ App = {
       }
 
       var account = accounts[0];
+
+       
+      console.log(account);
 
       App.contracts.Adoption.deployed().then(function (instance) {
         adoptionInstance = instance;
