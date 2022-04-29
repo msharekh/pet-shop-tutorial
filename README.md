@@ -35,10 +35,10 @@ collapse js: ctrl+k+N
 [javascripttutorial](https://www.javascripttutorial.net/nodejs-tutorial/npm-list/
 )
   ### Listing packages in devDependencies
-    `npm list --dev`
+  `npm list --dev`
   ### Formatting installed packages in JSON format
-    `npm list --depth=0 --json`
-    msh@Meshals-MacBook-Pro pet-shop-tutorial % npm list --depth=0 --json
+  `npm list --depth=0 --json`
+  
 ```json
 {
   "version": "1.0.0",
@@ -49,14 +49,16 @@ collapse js: ctrl+k+N
       "resolved": "https://registry.npmjs.org/lite-server/-/lite-server-2.4.0.tgz"
     }
   }
-}```
-  ### Listing packages in devDependencies
-    `npm list --dev`  
-### Listing packages in devDependencies
-      `npm list --dev`  
+}
+```
 
-  ### Listing packages in devDependencies
-      `npm list --dev`  
+### Listing packages in devDependencies
+`npm list --dev`  
+### Listing packages in devDependencies
+`npm list --dev`  
+
+### Listing packages in devDependencies
+`npm list --dev`  
 
 
 # Creating a Truffle project using a Truffle Box
